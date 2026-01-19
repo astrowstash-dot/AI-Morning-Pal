@@ -18,7 +18,47 @@ def get_random_images():
     ]
     return random.choice(images_url)
 
+# ----home page descriptions ----
+
+def Home_page():
+    # Display the home papge with quote and image
+    st.title("Your Morning Pal. 🌞")
+    st.markdown("----")
+    st.subheader("Thought of the Day.")
+    st.info (f"{get_random_quote()}")
+    st.image(get_random_images(), caption="A beautiful way to start your day.", use_container_width= True)
+    st.markdown("----")
+    st.write("Sidebar on the left -> Daily updates! ")
+    
+
+
 def weather_news_page():
     """Displays the page for getting weather and news by city."""
     st.header ("Get weather of the city")
     city = st.text_input("Enter your city name: ")
+    st.success("Done")
+
+
+def interest_news_page():
+    # Displays News of interest
+    st.header("Get news based on your interest")
+    interest= st.selectbox("Select your interest",["Technology", "Sports", "Health"])
+
+    if st.button("Fetch News"):
+        st.success("Done")
+
+
+def smart_planner():
+    st.header("Your smart planner")
+    city = st.text_input("Emter your city")
+    if st.button("Let's plan"):
+        st.success("done")
+
+
+# -----sidebar navigation------
+
+st.sidebar.title("Navigation")
+st.sidebar.markdown("----")
+st.sidebar.subheader("choose your page: ")
+st.sidebar(Home_page("Home"))
+
