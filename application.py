@@ -10,3 +10,17 @@ if not api_key:
     raise ValueError ("API key not found.")
 
 client = genai.client(api_key=api_key)
+
+# function to get weather of the city
+
+def get_weather(city:str):
+    '''
+    featches current weather of the city
+
+    args:
+    city(str): city(name)
+
+    returns:
+    dict: data in jason format
+    '''
+
