@@ -7,8 +7,15 @@ import random
 
 def get_random_quote(): 
     quotes = [
-        "Todays goal: Coffee and Kindness. Maybe two coffees, and then kindndess",
-        "Write it on your heart that every day is the best day in the year."
+        "Believe you can and you're halfway there.",
+        "Write it on your heart that every day is the best day in the year.",
+        "Your futures past is your presents future - changing the past is possible!",
+        "The only person you are destined to become is the person you decide to be.",
+        "Clarity comes from action.",
+        "You know more than you think you do.Trust Yourself.",
+        "In the middle of difficulty lies opportunity.",
+        "Courage is the important of all virtues, because without courage you can't practice any other virtues consistently."
+
     ]
     return random.choice(quotes)
 
