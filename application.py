@@ -30,7 +30,7 @@ def get_weather(city:str):
     dict: data in jason format
     '''
     try:
-        #api_key = "5422c8018545fe4491659752823b9931"
+        #api_key = ""
         url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={Weather_api_key}"
         response = requests.get(url)
         return response.json()
