@@ -1,5 +1,6 @@
 import streamlit as st
 import random
+from application import temperature_of_city
 
 # ----- page configuration -----
 
@@ -43,7 +44,14 @@ def weather_news_page():
     """Displays the page for getting weather and news by city."""
     st.header ("Get weather of the city")
     city = st.text_input("Enter your city name: ")
-    st.success("Done")
+    
+    if st.button("Fetch Information"):
+        if city:
+            Temperature_output = temperature_of_city(city)
+            st.subheader (f"Weather Info: {Temperature_output}")
+            st.success("Weather information fetched successfully!!!!!!")
+    else:
+        st.error("Please enter a city name.")
 
 
 def interest_news_page():
@@ -67,5 +75,5 @@ def smart_planner():
 st.sidebar.title("Navigation")
 st.sidebar.markdown("----")
 st.sidebar.subheader("choose your page: ")
-st.sidebar(Home_page("Home"))
+st.sidebar(Home_page())
 
