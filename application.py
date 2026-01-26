@@ -19,8 +19,8 @@ client = genai.Client(api_key=Google_api_key)
 
 # function to get weather of the city
 
-def get_weather(city:str):
-    '''
+def get_weather(city:str):  # Type hint
+    '''    
     featches current weather of the city
 
     args:
