@@ -50,8 +50,8 @@ def weather_news_page():
             Temperature_output = temperature_of_city(city)
             st.subheader (f"Weather Info: {Temperature_output}")
             st.success("Weather information fetched successfully!!!!!!")
-    else:
-        st.error("Please enter a city name.")
+        else:
+            st.error("Please enter a city name.")
 
 
 def interest_news_page():
