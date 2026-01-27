@@ -55,9 +55,11 @@ def weather_news_page():
 
 
 def interest_news_page():
-    # Displays News of interest
-    st.header("Get news based on your interest")
-    interest= st.selectbox("Select your interest",["Technology", "Sports", "Health"])
+   
+    """Displays the page for getting news by interest."""
+    st.header("Get News Based on Your Interests")
+    interest = st.text_input("Enter your area of interest (e.g., Technology, Sports, Health):", "Technology")
+
 
     if st.button("Fetch News"):
         st.success("Done")
