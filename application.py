@@ -64,3 +64,21 @@ def temperature_of_city (city):
     )
 
     return(response.candidates[0].content.parts[0].text)
+
+
+ # FUNCTION TO GET NEWS OF INTEREST
+def get_news(topic: str):
+    """
+    fetches latest news headlines from an API
+
+    args:
+    topic(str):topic top search news for(eg- technology , cricket etc)
+    """
+    try:
+        api_key=""
+        url= f""
+        response =requests.get(url)
+        return response.json().get("articles",[])
+    except requests.exceptions.RequestException as e:
+        return{"error": str(e)}
+
