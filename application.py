@@ -9,10 +9,13 @@ load_dotenv()
 
 Google_api_key= os.getenv("GOOGLE_API_KEY")
 Weather_api_key = os.getenv("WEATHER_API_KEY")
+news_api_key = os.getenv("NEWS_API_KEY")
 
 if not Google_api_key:
     raise ValueError ("API key not found.")
 if not Weather_api_key:
+    raise ValueError("API key not found.")
+if not news_api_key:
     raise ValueError("API key not found.")
 
 client = genai.Client(api_key=Google_api_key)
@@ -75,8 +78,8 @@ def get_news(topic: str):
     topic(str):topic top search news for(eg- technology , cricket etc)
     """
     try:
-        api_key=""
-        url= f""
+        
+        url= f"https://newsapi.org/v2/everything?q={topic}&apiKey={news_api_key}"
         response =requests.get(url)
         return response.json().get("articles",[])
     except requests.exceptions.RequestException as e:
